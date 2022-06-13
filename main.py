@@ -2715,13 +2715,13 @@ while int(not faliujog1) + int(not faliujog2) + int(not faliujog3) + int(not fal
     if not faliujog4:
         vencedor = nomejog4
     turno += 1
-    if turno == 4:
+    if turno == 1000:
         break
     print("--------------------------------------------------------------------------------------------")
 
 mai = 0
 print("\n")
-if turno < 4:
+if turno < 1000:
     print("Numero de Rodadas: " + str(turno))
     print("🧠 --- VENCEDOR --- 🧠 ------> " + vencedor)
     print("☠  --- 2º Lugar --- ☠  ------> " + lista_de_faliu[2])
