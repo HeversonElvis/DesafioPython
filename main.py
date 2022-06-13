@@ -94,6 +94,7 @@ tentjog4 = 0
 faliujog4 = False
 
 lista_de_faliu = []
+lista_num = []
 turno = 0
 
 # Loop de Jogadas
@@ -2714,12 +2715,28 @@ while int(not faliujog1) + int(not faliujog2) + int(not faliujog3) + int(not fal
     if not faliujog4:
         vencedor = nomejog4
     turno += 1
+    if turno == 4:
+        break
     print("--------------------------------------------------------------------------------------------")
 
+mai = 0
 print("\n")
-print("Numero de Rodadas: " + str(turno))
-print("🧠 --- VENCEDOR --- 🧠 ------> " + vencedor)
-print("☠  --- 2º Lugar --- ☠  ------> " + lista_de_faliu[2])
-print("☠  --- 3º Lugar --- ☠  ------> " + lista_de_faliu[1])
-print("☠  --- 4º Lugar --- ☠  ------> " + lista_de_faliu[0])
+if turno < 4:
+    print("Numero de Rodadas: " + str(turno))
+    print("🧠 --- VENCEDOR --- 🧠 ------> " + vencedor)
+    print("☠  --- 2º Lugar --- ☠  ------> " + lista_de_faliu[2])
+    print("☠  --- 3º Lugar --- ☠  ------> " + lista_de_faliu[1])
+    print("☠  --- 4º Lugar --- ☠  ------> " + lista_de_faliu[0])
+else:
+    print("💣 Estourou por Time-Out 💣")
+    print("Numero de Rodadas: " + str(turno))
+    if valorjogador1 > valorjogador2 and valorjogador1 > valorjogador3 and valorjogador1 > valorjogador4:
+        vencedor = nomejog1
+    if valorjogador2 > valorjogador1 and valorjogador2 > valorjogador3 and valorjogador2 > valorjogador4:
+        vencedor = nomejog2
+    if valorjogador3 > valorjogador1 and valorjogador3 > valorjogador2 and valorjogador3 > valorjogador4:
+        vencedor = nomejog3
+    if valorjogador4 > valorjogador1 and valorjogador4 > valorjogador2 and valorjogador4 > valorjogador3:
+        vencedor = nomejog3
 
+    print("🧠 --- VENCEDOR --- 🧠 ------> " + vencedor)
